@@ -28,3 +28,7 @@ variable "instances" {
   description = "number of ec2 instances"
   default = 12
 }
+#AMI - You must adjust this based on the region you're in
+variable "ubuntu_ami" {
+  default = "ami-0a886ac6c13a423f8"
+}
