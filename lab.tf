@@ -66,11 +66,11 @@ egress {
 }
 
 #Create Network Interface
-resource "aws_network_interface" "waap-nic" {
+resource "aws_network_interface" "lab_nic" {
     count = var.instances
     subnet_id = aws_subnet.external.id
     #private_ips = ""
-    security_groups = [aws_security_group.waap_sg.id]
+    security_groups = [aws_security_group.lab_sg.id]
 }
 
 /*
