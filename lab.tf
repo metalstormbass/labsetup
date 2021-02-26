@@ -77,7 +77,7 @@ resource "aws_network_interface" "lab_nic" {
 resource "aws_eip" "lab_eip" {
   count = var.instances
   vpc                       = true
-  network_interface         = aws_network_interface.lab_nic.id[count.index]
+  network_interface         = aws_network_interface.lab_nic[count.index]
   #associate_with_private_ip = ""
   depends_on = [aws_internet_gateway.lab_gateway]
 }
@@ -90,7 +90,7 @@ resource "aws_instance" "lab_vm" {
   #key_name = var.key_name
   network_interface {
         device_index = 0
-        network_interface_id = aws_network_interface.lab_nic.id[count.index]
+        network_interface_id = aws_network_interface.lab_nic[count.index]
   }
  
 
@@ -98,5 +98,5 @@ resource "aws_instance" "lab_vm" {
 
 output "public_ip" {
   description = "List of public IP addresses assigned to the instances, if applicable"
-  value       = aws_instance.lab_eip.public_ip
+  value       = aws_instance.lab_vm.public_ip
 }
