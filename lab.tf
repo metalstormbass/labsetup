@@ -96,7 +96,10 @@ resource "aws_instance" "lab_vm" {
 
 }
 
-output "public_ip" {
-  description = "List of public IP addresses assigned to the instances, if applicable"
-  value       = aws_instance.lab_vm[count.index].public_ip
+output "instance_ip_addresses" {
+  value = {
+    for instance in aws_instance.lab_vm:
+      instance.id => instance.public_ip
+  }
 }
+
