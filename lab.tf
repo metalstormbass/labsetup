@@ -18,7 +18,7 @@ vpc-12 = "10.12.0.0/24"
 
 #Build VPC
 resource "aws_vpc" "labvpc" {
-  for_each = var.vpc_map
+  for_each = locals.vpc_map
   cidr_block = [each.value]
 
 }
