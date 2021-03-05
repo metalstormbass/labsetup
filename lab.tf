@@ -74,13 +74,13 @@ resource "aws_network_interface" "lab_nic" {
 }
 
 #Create Elastic IP
-resource "aws_eip" "lab_eip" {
-  count = var.instances
-  vpc                       = true
-  network_interface         = aws_network_interface.lab_nic[count.index].id
+#resource "aws_eip" "lab_eip" {
+#  count = var.instances
+#  vpc                       = true
+#  network_interface         = aws_network_interface.lab_nic[count.index].id
   #associate_with_private_ip = ""
-  depends_on = [aws_internet_gateway.lab_gateway]
-}
+#  depends_on = [aws_internet_gateway.lab_gateway]
+#}
 
 resource "aws_instance" "lab_vm" {
   count = var.instances
