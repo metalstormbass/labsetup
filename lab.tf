@@ -13,6 +13,7 @@ resource "aws_subnet" "external" {
   vpc_id                  = aws_vpc.labvpc.id
   cidr_block              = var.aws_subnet_cidr
   availability_zone       = var.primary_az
+  map_public_ip_on_launch = true 
  
 }
 
