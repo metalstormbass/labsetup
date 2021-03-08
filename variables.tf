@@ -26,7 +26,7 @@ variable "aws_subnet_cidr" {
 #Number of instances
 variable "instances" {
   description = "number of ec2 instances"
-  default = 12
+  default = 15
 }
 #AMI - You must adjust this based on the region you're in
 variable "ubuntu_ami" {
