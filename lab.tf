@@ -88,10 +88,7 @@ resource "aws_instance" "lab_vm" {
   availability_zone = var.primary_az
   ami           = var.ubuntu_ami
   instance_type = "t2.xlarge"
-  root_block_device = [
-   volume_size = 40,
-   ]
-  #key_name = var.key_name
+  root_block_device = [volume_size = 40]
   network_interface {
         device_index = 0
         network_interface_id = aws_network_interface.lab_nic[count.index].id
