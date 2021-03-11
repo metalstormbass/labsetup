@@ -88,9 +88,9 @@ resource "aws_instance" "lab_vm" {
   availability_zone = var.primary_az
   ami           = var.ubuntu_ami
   instance_type = "t2.xlarge"
-  root_block_device = [{
+  root_block_device = [
    volume_size = 40
-   },]
+   ]
   #key_name = var.key_name
   network_interface {
         device_index = 0
