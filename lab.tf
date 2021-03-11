@@ -89,7 +89,7 @@ resource "aws_instance" "lab_vm" {
   ami           = var.ubuntu_ami
   instance_type = "t2.xlarge"
   root_block_device = [
-   volume_size = 40
+   volume_size = 40,
    ]
   #key_name = var.key_name
   network_interface {
