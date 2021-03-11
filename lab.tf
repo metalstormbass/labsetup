@@ -1,4 +1,4 @@
-#Build VPC
+##Build VPC
 resource "aws_vpc" "labvpc" {
   cidr_block = var.aws_vpc_cidr
 }
